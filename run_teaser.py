@@ -9,6 +9,7 @@ import traceback
 
 app = Flask(__name__)
 app.debug =True
+# XXX: Bad. but who cares? -_-
 app.config['INDEX'] = open('teaser/index.html').read()
 
 mongo = pymongo.MongoClient('mongodb://localhost:27017')
@@ -18,8 +19,7 @@ sub.ensure_index([('email', pymongo.ASCENDING)], unique=True)
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'GET':
-        return open('teaser/index.html').read()
-        # return app.config['INDEX']
+        return app.config['INDEX']
     elif request.method == 'POST':
         email = request.form['email']
         print email
