@@ -5,6 +5,8 @@ favorites.so
 
 favorites.so is organization service for favorites in Stack Overflow. User can browse oneself's favorites easily by tags, popularity and so on.
 
+[Teaser Site](http://favorites.so)
+
 Features
 --------
 * Browse Favorites by tag
